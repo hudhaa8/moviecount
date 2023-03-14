@@ -29,7 +29,7 @@ export default function App() {
       {/* {arr.map((nm)=> <Welcome name={nm}/>)} */}
       {persons.map((obj)=> <Welcome name={obj.name} pic={obj.pic}/>  )}
         
- 
+ <Add />
     </div>
   )
 }
@@ -50,6 +50,14 @@ function Counter() {
     <div>
       <button onClick={()=> setLike(like + 1) }>👍 {like}</button>
       <button onClick={()=>setDislike(dislike + 1)}> 👎 {dislike}</button>
+    </div>
+  )
+}
+
+function Add() {
+  return(
+    <div>
+      {15+22}
     </div>
   )
 }
