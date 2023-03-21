@@ -10,6 +10,9 @@ import TextField from '@mui/material/TextField';
 import { AddColor } from './AddColor';
 import { Movie } from './Movie';
 
+import {Link , Route, Switch} from "react-router-dom";
+
+
 export default function App() {
   const arr = ["mohammad", "rahman", "rizwan"];
   let persons = [
@@ -70,10 +73,31 @@ export default function App() {
   const [rating, setRating] = useState('')
 
 const [movieList, setMovieList] = useState(INITIAL_MOVIE_LIST)
-
+  //movie-  add movie and movie list
+  // color-game - add color
+  //  / - welcome to the movie app
   return (
+    
     <div className="App">
-<div className='add-movie-form'>
+
+<ul>
+    <li>
+        <Link to='/movies'>Movies</Link>
+    </li>
+    <li>
+    <Link to='/color-game'>Color Game</Link>
+    </li>
+    <li>
+    <Link to='/'>Home</Link>
+    </li>
+  
+  </ul>
+
+
+  <switch>
+  <Route path='/movies'>
+
+  <div className='add-movie-form'>
 <TextField onChange={(event)=>setPoster(event.target.value)}label="Poster" variant="outlined" />
 <TextField onChange={(event)=>setName(event.target.value)}label="Name" variant="outlined" />
 <TextField onChange={(event)=>setSummary(event.target.value)}label="Summary" variant="outlined" />
@@ -106,7 +130,7 @@ const [movieList, setMovieList] = useState(INITIAL_MOVIE_LIST)
        <Movie name= {mv.name} poster={mv.poster} rating={mv.rating} summary={mv.summary} />
     )} */}
 
-    <AddColor />
+    {/* <AddColor /> */}
  
 <div className='movie-list'>
 {movieList.map(({name, poster, rating, summary},index)=> 
@@ -114,11 +138,28 @@ const [movieList, setMovieList] = useState(INITIAL_MOVIE_LIST)
     )}
     </div>
 
+  </Route>
+  <Route path='/color-game'>
+  <AddColor />
+  </Route>
+  <Route path='/'>
+    <Msg />
+  </Route>
+</switch> 
+
+
+
     </div>
   )
   }
 
-  // function New() {
 
-  // }
+function Msg() {
+  return(
+    <div>
+      <h2>Welcome to Movie App </h2>
+    </div>
+  )
+}
+
 
