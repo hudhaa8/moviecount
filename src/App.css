@@ -1,5 +1,16 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+
+}
+
+.counter-container {
+  display: flex;
+
+ 
+}
+.like-dislike {
+  font-size : 20px;
+  margin: 5px;
 }
 
 .welcome {
@@ -8,4 +19,53 @@
 .welcome img{
   width : 250px;
   height : auto;
+}
+
+
+.movie-poster {
+  width : 340px;
+  height: 450px;
+  object-fit : cover;
+}
+
+.movie-container {
+  width : 340px;
+  background-color: lightcyan;
+  /* height: min-content; */
+ 
+}
+
+.movie-specs {
+  display : flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-name {
+  margin: 0px;
+  font-size: 24px;
+}
+
+.movie-summary {
+  margin-top : 0px;
+}
+
+.movie-rating {
+  font-size: 19px;
+}
+
+.movie-list {
+  display : flex;
+  flex-wrap : wrap;
+  justify-content: space-around;
+  gap : 16px;
+
+}
+
+
+.add-movie-form {
+  display : flex ;
+  flex-direction: column;
+  gap : 10px;
+  margin : 16px;
 }
