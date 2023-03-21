@@ -11,6 +11,7 @@ import { AddColor } from './AddColor';
 import { Movie } from './Movie';
 
 import {Link , Route, Switch} from "react-router-dom";
+import { Msg } from './Msg';
 
 
 export default function App() {
@@ -153,13 +154,5 @@ const [movieList, setMovieList] = useState(INITIAL_MOVIE_LIST)
   )
   }
 
-
-function Msg() {
-  return(
-    <div>
-      <h2>Welcome to Movie App </h2>
-    </div>
-  )
-}
 
 
