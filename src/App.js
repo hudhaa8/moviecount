@@ -9,9 +9,10 @@ import TextField from "@mui/material/TextField";
 // import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { AddColor } from "./AddColor";
 import { Movie } from "./Movie";
-
 import { Link, Route, Switch } from "react-router-dom";
 import { Msg } from "./Msg";
+import useWindowSize from "react-use/lib/useWindowSize";
+import Confetti from "react-confetti";
 
 export default function App() {
   const arr = ["mohammad", "rahman", "rizwan"];
@@ -183,7 +184,6 @@ export default function App() {
   );
 }
 
-
 function TicTacToe() {
   const [board, setBoard] = useState([
     null,
@@ -213,36 +213,37 @@ function TicTacToe() {
       const [a, b, c] = lines[i];
       if (board[a] !== null && board[a] === board[b] && board[b] === board[c]) {
         console.log("Winner is", board[a]);
-          return board[a];
+        return board[a];
       }
     }
     return null;
   };
- const winner = decideWinner(board);
+  const winner = decideWinner(board);
 
   const [isXturn, setIsXturn] = useState(true);
- 
+
   const handleClick = (index) => {
-     //copy of the board and replace with "X" inn the clicked Gamebox
-//udate only untouched boxes until no winner
-    if(winner === null && board[index] === null) {
+    //copy of the board and replace with "X" inn the clicked Gamebox
+    //udate only untouched boxes until no winner
+    if (winner === null && board[index] === null) {
       const boardCopy = [...board];
-    boardCopy[index] = isXturn ? "X" : "O";
-    setBoard(boardCopy);
-    setIsXturn(!isXturn);
-    // console.log(index)
+      boardCopy[index] = isXturn ? "X" : "O";
+      setBoard(boardCopy);
+      setIsXturn(!isXturn);
+      // console.log(index)
     }
   };
-
+  const { width, height } = useWindowSize();
   return (
     <div className="full-game">
+      {winner ? <Confetti width={width} height={height} /> : " "}
       <div className="board">
         {board.map((val, index) => (
           <GameBox val={val} onPlayerClick={() => handleClick(index)} />
         ))}
         {/* <GameBox /> */}
         {/* <h2> Winner is {winner}</h2> */}
-       { winner ? <h2> Winner is {winner}</h2> : ""}
+        {winner ? <h2> Winner is {winner}</h2> : ""}
       </div>
     </div>
   );
@@ -262,4 +263,3 @@ function GameBox({ val, onPlayerClick }) {
     </div>
   );
 }
-
