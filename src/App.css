@@ -69,3 +69,27 @@
   gap : 10px;
   margin : 16px;
 }
+
+.game-box {
+  width: 150px;
+  height:150px;
+  border:  2px solid black;
+  font-size: 150px;
+  display: flex;
+  justify-content:center ;
+  align-items: center;
+  cursor: pointer;
+}
+
+.board{
+  display: flex;
+  flex-wrap: wrap;
+  width : 500px;
+}
+
+.full-game {
+  display : flex ;
+  justify-content: center;
+  align-items: center;
+}
+
