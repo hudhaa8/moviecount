@@ -5,6 +5,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 
 
 export function MovieList({ movieList,setMovieList }) {
+
   return (
     <div className="movie-list">
       {movieList.map(({ name, poster, rating, summary }, index) => (
@@ -22,8 +23,9 @@ export function MovieList({ movieList,setMovieList }) {
              }} aria-label="delete" color="error" >
   <DeleteIcon />
 </IconButton>
-          // <button >delete this 🧨🧨 </button>
+          
         }
+        id = {index}
           />
       ))}
     </div>

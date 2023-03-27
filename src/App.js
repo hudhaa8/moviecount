@@ -14,6 +14,8 @@ import { NotFound } from "./NotFound";
 import { MovieList } from "./MovieList";
 import { TicTacToe } from "./TicTacToe";
 import { INITIAL_MOVIE_LIST } from "./INITIAL_MOVIE_LIST";
+import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+
 
 export default function App() {
   const arr = ["mohammad", "rahman", "rizwan"];
@@ -44,6 +46,7 @@ export default function App() {
   //movie-  add movie and movie list
   // color-game - add color
   //  / - welcome to the movie app
+const {id} = useParams()
   return (
     <div className="App">
       <ul>
@@ -128,6 +131,9 @@ export default function App() {
         <Route path="/color-game">
           <AddColor />
         </Route>
+        <Route path="/movies/:id">
+      <MovieDetails />
+        </Route>
         <Route path="/tic-tac-toe">
           <TicTacToe />
         </Route>
@@ -140,4 +146,15 @@ export default function App() {
       </Switch>
     </div>
   );
+}
+
+
+function MovieDetails() {
+  // const {id} = useParams()  // extrating parameter from the url
+  // console.log(id)
+  return(
+    <div>
+      Awesome Movie
+    </div>
+  )
 }
