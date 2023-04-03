@@ -28,7 +28,7 @@ export function Movie({ poster, name, rating, summary, deleteButton, id }) {
  
   return (
     <Card className="movie-container">
-      <img src={poster} alt="avengers" className="movie-poster"></img>
+      <img src={poster} alt="movieposter" className="movie-poster"></img>
       <CardContent>
         <div className="movie-specs">
           <h2 className="movie-name">
@@ -43,7 +43,7 @@ export function Movie({ poster, name, rating, summary, deleteButton, id }) {
             </IconButton>
 
             <IconButton
-              onClick={() => history.push(`/movies/${id}`)}
+              onClick={() => history.push(`/newmovies/${id}`)}
               color="primary"
               aria-label="toggle summary"
             >

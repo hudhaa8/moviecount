@@ -3,7 +3,7 @@ import React from 'react';
 import { ColorBox } from './ColorBox';
 
 export function AddColor() {
-  const [color, setColor] = useState('pink');
+  const [color, setColor] = useState('purple');
   const styles = {
     backgroundColor: color,
   };

@@ -96,3 +96,8 @@
 .not-found {
   text-align: center;
 }
+
+.movie-detail-container {
+  max-width: 900px;
+  padding: 24px;
+}

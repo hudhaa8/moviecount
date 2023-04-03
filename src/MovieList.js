@@ -15,6 +15,7 @@ export function MovieList({ movieList,setMovieList }) {
           poster={poster}
           rating={rating}
           summary={summary} 
+          // passing jsx as props
           deleteButton= {
             <IconButton onClick={()=>{
               const copyMovieList = [...movieList]

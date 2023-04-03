@@ -15,7 +15,7 @@ import { MovieList } from "./MovieList";
 import { TicTacToe } from "./TicTacToe";
 import { INITIAL_MOVIE_LIST } from "./INITIAL_MOVIE_LIST";
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-
+import { SingleMovie } from "./SingleMovie";
 
 export default function App() {
   const arr = ["mohammad", "rahman", "rizwan"];
@@ -46,7 +46,7 @@ export default function App() {
   //movie-  add movie and movie list
   // color-game - add color
   //  / - welcome to the movie app
-const {id} = useParams()
+  const { id } = useParams();
   return (
     <div className="App">
       <ul>
@@ -60,6 +60,9 @@ const {id} = useParams()
           <Link to="/tic-tac-toe">Tic Tac Toe</Link>
         </li>
         <li>
+          <Link to="/singlemovie">Single Movie</Link>
+        </li>
+        <li>
           <Link to="/">Home</Link>
         </li>
       </ul>
@@ -68,6 +71,7 @@ const {id} = useParams()
         <Route path="/films">
           <Redirect to="/movies" />
         </Route>
+
         <Route path="/movies">
           <div className="add-movie-form">
             <TextField
@@ -131,8 +135,11 @@ const {id} = useParams()
         <Route path="/color-game">
           <AddColor />
         </Route>
-        <Route path="/movies/:id">
-      <MovieDetails />
+        <Route path="/singlemovie">
+          <SingleMovie />
+        </Route>
+        <Route path="/newmovies/:id">
+          <MovieDetails movieList={movieList} />
         </Route>
         <Route path="/tic-tac-toe">
           <TicTacToe />
@@ -148,13 +155,26 @@ const {id} = useParams()
   );
 }
 
-
-function MovieDetails() {
-  // const {id} = useParams()  // extrating parameter from the url
-  // console.log(id)
-  return(
+function MovieDetails({movieList}) {
+  const {id} = useParams()  // extrating parameter from the url
+  console.log(id)
+  
+  const movie = movieList[id]
+  return (
     <div>
-      Awesome Movie
+       <iframe width="100%" height="450" src={movie.trailer} title="Marvel&#39;s The Avengers- Trailer (OFFICIAL)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    
+    <div className="movie-detail-container">
+      {/* <img src={movie.poster} alt="movposter" className="movie-poster"></img> */}
+     
+      <div className="movie-specs">
+        <h2 className="movie-name">{movie.name}</h2>
+        <p className="movie-rating">  ⭐ {movie.rating} </p>
+      </div>
+
+      <p className="movie-summary">  {movie.summary} </p>
     </div>
-  )
+    </div>
+  );
 }
