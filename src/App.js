@@ -1,8 +1,6 @@
 import "./App.css";
 import { useState } from "react";
-import Button from "@mui/material/Button";
 import React from "react";
-import TextField from "@mui/material/TextField";
 // import { display } from '@mui/system';
 // import DeleteIcon from '@mui/icons-material/Delete';
 // import MailIcon from '@mui/icons-material/Mail';
@@ -14,8 +12,9 @@ import { NotFound } from "./NotFound";
 import { MovieList } from "./MovieList";
 import { TicTacToe } from "./TicTacToe";
 import { INITIAL_MOVIE_LIST } from "./INITIAL_MOVIE_LIST";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
 import { SingleMovie } from "./SingleMovie";
+import { MovieDetails } from "./MovieDetails";
+import { AddMovie } from "./AddMovie";
 
 export default function App() {
   const arr = ["mohammad", "rahman", "rizwan"];
@@ -37,16 +36,8 @@ export default function App() {
     },
   ];
 
-  const [poster, setPoster] = useState("");
-  const [name, setName] = useState("");
-  const [summary, setSummary] = useState("");
-  const [rating, setRating] = useState("");
-
   const [movieList, setMovieList] = useState(INITIAL_MOVIE_LIST);
-  //movie-  add movie and movie list
-  // color-game - add color
-  //  / - welcome to the movie app
-  const { id } = useParams();
+
   return (
     <div className="App">
       <ul>
@@ -61,6 +52,9 @@ export default function App() {
         </li>
         <li>
           <Link to="/singlemovie">Single Movie</Link>
+          <li>
+          <Link to="/movies/add">Add Movie</Link>
+        </li>
         </li>
         <li>
           <Link to="/">Home</Link>
@@ -72,48 +66,12 @@ export default function App() {
           <Redirect to="/movies" />
         </Route>
 
+        <Route path="/movies/add">
+      <AddMovie movieList={movieList} setMovieList={setMovieList}/>
+        </Route>
+
         <Route path="/movies">
-          <div className="add-movie-form">
-            <TextField
-              onChange={(event) => setPoster(event.target.value)}
-              label="Poster"
-              variant="outlined"
-            />
-            <TextField
-              onChange={(event) => setName(event.target.value)}
-              label="Name"
-              variant="outlined"
-            />
-            <TextField
-              onChange={(event) => setSummary(event.target.value)}
-              label="Summary"
-              variant="outlined"
-            />
-            <TextField
-              onChange={(event) => setRating(event.target.value)}
-              label="Rating"
-              variant="outlined"
-            />
-
-            {/* copy of the movie list and add new movie to it */}
-
-            <Button
-              onClick={() => {
-                //this is obj
-                const newMovie = {
-                  poster: poster,
-                  name: name,
-                  summary: summary,
-                  rating: rating,
-                };
-                setMovieList([...movieList, newMovie]);
-              }}
-              variant="contained"
-            >
-              Add Movie
-            </Button>
-          </div>
-
+         
           {/* <h2> Movie List and Count </h2> */}
 
           {/* <Counter /> */}
@@ -155,26 +113,4 @@ export default function App() {
   );
 }
 
-function MovieDetails({movieList}) {
-  const {id} = useParams()  // extrating parameter from the url
-  console.log(id)
-  
-  const movie = movieList[id]
-  return (
-    <div>
-       <iframe width="100%" height="450" src={movie.trailer} title="Marvel&#39;s The Avengers- Trailer (OFFICIAL)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-    
-    <div className="movie-detail-container">
-      {/* <img src={movie.poster} alt="movposter" className="movie-poster"></img> */}
-     
-      <div className="movie-specs">
-        <h2 className="movie-name">{movie.name}</h2>
-        <p className="movie-rating">  ⭐ {movie.rating} </p>
-      </div>
-
-      <p className="movie-summary">  {movie.summary} </p>
-    </div>
-    </div>
-  );
-}
