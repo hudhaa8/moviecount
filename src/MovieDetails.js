@@ -1,11 +1,12 @@
 import React from "react";
-import { useParams } from "react-router-dom/cjs/react-router-dom.min";
+import { useParams, useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 export function MovieDetails({ movieList }) {
   const { id } = useParams(); // extrating parameter from the url
   console.log(id);
 
   const movie = movieList[id];
+  const history = useHistory()
   return (
     <div>
       <iframe width="100%" height="450" src={movie.trailer} title="Marvel&#39;s The Avengers- Trailer (OFFICIAL)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -20,6 +21,7 @@ export function MovieDetails({ movieList }) {
         </div>
 
         <p className="movie-summary">  {movie.summary} </p>
+        <button onClick={()=>history.goBack()}>Back</button>
       </div>
     </div>
   );

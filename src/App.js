@@ -50,11 +50,10 @@ export default function App() {
         <li>
           <Link to="/tic-tac-toe">Tic Tac Toe</Link>
         </li>
-        <li>
-          <Link to="/singlemovie">Single Movie</Link>
+     
           <li>
           <Link to="/movies/add">Add Movie</Link>
-        </li>
+        
         </li>
         <li>
           <Link to="/">Home</Link>
@@ -92,9 +91,6 @@ export default function App() {
 
         <Route path="/color-game">
           <AddColor />
-        </Route>
-        <Route path="/singlemovie">
-          <SingleMovie />
         </Route>
         <Route path="/newmovies/:id">
           <MovieDetails movieList={movieList} />
