@@ -30,7 +30,9 @@ export function TicTacToe() {
     ];
     // if winning condition is present in board then we go for winner
     for (let i = 0; i < lines.length; i++) {
+      //array destructuring
       const [a, b, c] = lines[i];
+      // initially all values are same , thats why board[a] !=null
       if (board[a] !== null && board[a] === board[b] && board[b] === board[c]) {
         console.log("Winner is", board[a]);
         return board[a];

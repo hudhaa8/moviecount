@@ -22,6 +22,7 @@ export function MovieDetails({ movieList }) {
 
         <p className="movie-summary">  {movie.summary} </p>
         <button onClick={()=>history.goBack()}>Back</button>
+        
       </div>
     </div>
   );

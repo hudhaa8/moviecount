@@ -15,6 +15,7 @@ import { INITIAL_MOVIE_LIST } from "./INITIAL_MOVIE_LIST";
 import { SingleMovie } from "./SingleMovie";
 import { MovieDetails } from "./MovieDetails";
 import { AddMovie } from "./AddMovie";
+import {EditMovie} from "./EditMovie";
 
 export default function App() {
   const arr = ["mohammad", "rahman", "rizwan"];
@@ -91,6 +92,9 @@ export default function App() {
 
         <Route path="/color-game">
           <AddColor />
+        </Route>
+        <Route path="/editmovies/edit/:id">
+        <EditMovie movieList={movieList} setMovieList={setMovieList} />
         </Route>
         <Route path="/newmovies/:id">
           <MovieDetails movieList={movieList} />
