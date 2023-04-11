@@ -169,7 +169,7 @@ const Button = ({ value}) => {
   const [mode,setMode] = useContext(themeContext)
   const styles ={
     backgroundColor : !(mode === "light") ? "black" : "orange",
-    color :mode === "light" ? "black" : "orange"
+    color : mode === "light" ? "black" : "orange"
   }
   return (
     <div>

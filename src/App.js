@@ -31,27 +31,8 @@ import Button from '@mui/material/Button';
 
  
 export default function App() {
-//  const history = useHistory();
-  const arr = ["mohammad", "rahman", "rizwan"];
-  let persons = [
-    {
-      name: "Mohammad",
-      pic:
-        "https://cdn.kimkim.com/files/a/images/c4232789cea9781694e5962c7d2cb13398f8d84e/big-0e7e6eab6fd05216c7b794bf1706e906.jpg",
-    },
-    {
-      name: "Rahman",
-      pic:
-        "https://s1.it.atcdn.net/wp-content/uploads/2020/12/A-view-of-SantAngelo-in-Ischia-island-in-Italy-800x600.jpg",
-    },
-    {
-      name: "Rizwan",
-      pic:
-        "https://cdn.theculturetrip.com/wp-content/uploads/2021/05/2a7d8pk-e1621272929144-768x431.jpg",
-    },
-  ];
 
-  const [movieList, setMovieList] = useState(INITIAL_MOVIE_LIST);
+const [movieList, setMovieList] = useState(INITIAL_MOVIE_LIST);
 
 const history = useHistory();
 const [mode, setMode] = useState('dark')

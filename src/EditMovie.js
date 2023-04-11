@@ -7,6 +7,7 @@ import { useHistory ,useParams} from "react-router-dom/cjs/react-router-dom.min"
 export function EditMovie({ movieList, setMovieList }) {
 
 const {id} =useParams()
+//useparams extract variable id from url
 const movie = movieList[id]
 
   const [name, setName] = useState(movie.name);
@@ -17,6 +18,7 @@ const movie = movieList[id]
   const history = useHistory()
   return (
     <div className="add-movie-form">
+      {/* <input type="text" /> */}
       <TextField
         onChange={(event) => setName(event.target.value)}
         value ={name}
