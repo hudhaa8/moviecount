@@ -101,3 +101,23 @@
   max-width: 900px;
   padding: 24px;
 }
+
+.themeuseContext{
+  width: 600px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 200px;
+ border-radius: 90%;
+}
+
+
+.listitems {
+  padding: 15px;
+  font-size: large;
+}
+
+.route-container {
+  margin: 20px;
+}

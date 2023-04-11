@@ -19,7 +19,9 @@ const history = useHistory()
           trailer={trailer}
           // passing jsx as props
           deleteButton= {
-            <IconButton onClick={()=>{
+            <IconButton
+            style={{marginLeft : "auto"}} 
+            onClick={()=>{
               const copyMovieList = [...movieList]
                copyMovieList.splice(index,1)
                setMovieList(copyMovieList)

@@ -8,14 +8,6 @@ export const INITIAL_MOVIE_LIST = [
   "trailer": "https://www.youtube.com/embed/OKBMCL-frPU"
   },
   {
-  "id": "100",
-  "name": "RRR",
-  "poster": "https://englishtribuneimages.blob.core.windows.net/gallary-content/2021/6/Desk/2021_6$largeimg_977224513.JPG",
-  "rating": 8.8,
-  "summary": "RRR is an upcoming Indian Telugu-language period action drama film directed by S. S. Rajamouli, and produced by D. V. V. Danayya of DVV Entertainments.",
-  "trailer": "https://www.youtube.com/embed/f_vbAtFSEc0"
-  },
-  {
   "id": "101",
   "name": "Iron man 2",
   "poster": "https://m.media-amazon.com/images/M/MV5BMTM0MDgwNjMyMl5BMl5BanBnXkFtZTcwNTg3NzAzMw@@._V1_FMjpg_UX1000_.jpg",
@@ -55,6 +47,14 @@ export const INITIAL_MOVIE_LIST = [
   "summary": "When Earth becomes uninhabitable in the future, a farmer and ex-NASA\n pilot, Joseph Cooper, is tasked to pilot a spacecraft, along with a team\n of researchers, to find a new planet for humans.",
   "trailer": "https://www.youtube.com/embed/zSWdZVtXT7E"
   },
+  {
+    "id": "100",
+    "name": "RRR",
+    "poster": "https://englishtribuneimages.blob.core.windows.net/gallary-content/2021/6/Desk/2021_6$largeimg_977224513.JPG",
+    "rating": 8.8,
+    "summary": "RRR is an upcoming Indian Telugu-language period action drama film directed by S. S. Rajamouli, and produced by D. V. V. Danayya of DVV Entertainments.",
+    "trailer": "https://www.youtube.com/embed/f_vbAtFSEc0"
+    },
   {
   "id": "106",
   "name": "Baahubali",
