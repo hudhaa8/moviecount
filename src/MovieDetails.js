@@ -1,11 +1,23 @@
 import React from "react";
 import { useParams, useHistory } from "react-router-dom/cjs/react-router-dom.min";
+import { useState, useEffect } from "react";
+import {API} from "./global";
 
-export function MovieDetails({ movieList }) {
+export function MovieDetails() {
   const { id } = useParams(); // extrating parameter from the url
-  console.log(id);
+  // console.log(id);
 
-  const movie = movieList[id];
+  const [movie,setMovie] = useState({})
+useEffect(()=>{
+fetch(`${API}/movies/${id}`,{
+  method : "GET"
+})
+.then((data)=> data.json())
+.then((mvss) => setMovie(mvss))
+.catch((err) => console.log(err))
+},[])
+
+  // const movie = movieList[id];
   const history = useHistory()
   return (
     <div>

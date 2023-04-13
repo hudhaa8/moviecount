@@ -90,7 +90,7 @@ const theme = createTheme({
         </Route>
 
         <Route path="/movies/add">
-      <AddMovie movieList={movieList} setMovieList={setMovieList}/>
+      <AddMovie />
         </Route>
 
         <Route path="/movies">
@@ -120,7 +120,7 @@ const theme = createTheme({
           <ThemeuseContext />
         </Route>
         <Route path="/editmovies/edit/:id">
-        <EditMovie movieList={movieList} setMovieList={setMovieList} />
+        <EditMovie  />
         </Route>
         <Route path="/newmovies/:id">
           <MovieDetails movieList={movieList} />
@@ -130,6 +130,7 @@ const theme = createTheme({
         </Route>
         <Route exact path="/">
           <Msg />
+          <BasicForm />
         </Route>
         <Route path="**">
           <NotFound />
@@ -145,3 +146,10 @@ const theme = createTheme({
 }
 
 
+function BasicForm() {
+  return(
+    <div>
+      Basic form
+    </div>
+  )
+}
