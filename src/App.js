@@ -28,6 +28,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 
 import Button from '@mui/material/Button';
+import { BasicForm } from "./BasicForm";
 
  
 export default function App() {
@@ -146,10 +147,3 @@ const theme = createTheme({
 }
 
 
-function BasicForm() {
-  return(
-    <div>
-      Basic form
-    </div>
-  )
-}
