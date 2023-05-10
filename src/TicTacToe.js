@@ -38,7 +38,7 @@ export function TicTacToe() {
         return board[a];
       }
     }
-    return null;
+    return null; // if there is no winner
   };
   const winner = decideWinner(board);
 

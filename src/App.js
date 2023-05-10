@@ -92,10 +92,12 @@ const theme = createTheme({
 
         <Route path="/movies/add">
       <AddMovie />
+      {/* <AddMovie movieList={movieList} setMovieList={setMovieList}/> */}
         </Route>
 
         <Route path="/movies">
-         
+           <MovieList movieList={movieList} setMovieList={setMovieList} />
+        </Route>
           {/* <h2> Movie List and Count </h2> */}
 
           {/* <Counter /> */}
@@ -110,9 +112,6 @@ const theme = createTheme({
     )} */}
 
           {/* <AddColor /> */}
-
-          <MovieList movieList={movieList} setMovieList={setMovieList} />
-        </Route>
 
         <Route path="/color-game">
           <AddColor />

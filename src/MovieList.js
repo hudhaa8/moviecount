@@ -68,3 +68,46 @@ const deleteMovie= (id) => {
     </div>
   );
 }
+
+
+
+// return (
+//   <div className="movie-list">
+//     {movieList.map(({ name, poster, rating, summary,trailer ,id}, index) => (
+//       <Movie
+//         key={index}
+//         id ={id}
+//         name={name}
+//         poster={poster}
+//         rating={rating}
+//         summary={summary} 
+//         trailer={trailer}
+//         // passing jsx as props
+//         deleteButton= {
+//           <IconButton
+//           onClick={()=>{
+//             const copyMovieList = [...movieList];
+//             copyMovieList.splice(index, 1)
+//             setMovieList(copyMovieList)
+//           }}
+//           >
+// <DeleteIcon />
+// </IconButton>
+        
+//       }
+
+//       editButton= {
+//         <IconButton onClick={()=>{
+//           history.push(`/editmovies/edit/${id}`)
+//          }} aria-label="delete" color="secondary" >
+// <EditIcon />
+// </IconButton>
+      
+//     }
+//       //passing index as id prop
+//       id = {id}
+//         />
+//     ))}
+//   </div>
+// );
+// }
