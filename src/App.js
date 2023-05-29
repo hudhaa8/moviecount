@@ -91,7 +91,7 @@ const theme = createTheme({
         </Route>
 
         <Route path="/movies/add">
-      <AddMovie />
+           <AddMovie />
       {/* <AddMovie movieList={movieList} setMovieList={setMovieList}/> */}
         </Route>
 

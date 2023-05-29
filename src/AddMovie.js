@@ -7,6 +7,8 @@ import { API } from "./global";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
+// here we did not use useState, formik do this 
+// export movieValidationSchema to editMovie , because of same validation
 export const movieValidationSchema = yup.object({
   name: yup
     .string()
@@ -37,14 +39,7 @@ export function AddMovie() {
 
   const addMovie = (newMovie) => {
     console.log("onsubmit", newMovie);
-    //this is obj
-    //  const newMovie = {
-    //   poster: poster,
-    //   name: name,
-    //   summary: summary,
-    //   rating: rating,
-    //   trailer : trailer,
-    // };
+  
     // 1. Method must be POST
     // 2. BODY - JSON data
     // 3. headers - JSON data
@@ -56,8 +51,7 @@ export function AddMovie() {
         "Content-type" : "application/json"
       }
     }).then(()=>history.push(`/movies`))
-    // setMovieList([...movieList, newMovie]);
-    // history.push(`/movies`)
+  
   };
 
   const formik = useFormik({
@@ -87,7 +81,10 @@ export function AddMovie() {
         error={formik.touched.name && formik.errors.name}
         helperText={formik.touched.name && formik.errors.name ? formik.errors.name : " "}
       />
-      
+      {/* {formik.touched.name && formik.errors.name ? formik.errors.name : " "} */}
+      { /* MATERIAL UI Properties, cherry on the cake (RED COLOR)
+      error={true}
+      helperText="Incorrect Entry" */}
       <TextField
         id="poster"
         name="poster"

@@ -56,18 +56,12 @@ function MovieEditForm({movie}) {
   });
 
 const editMovie = (updatedMovie) => {
-        //this is obj
-          // const updatedMovie = {
-          //   poster: poster,
-          //   name: name,
-          //   summary: summary,
-          //   rating: rating,
-          //   trailer : trailer,
-          // };
-          // 1. Method must be PUT and pass id
-// 2. BODY - JSON data
-// 3. headers - JSON data
-// 4 .After PUT is completed -> move to movies
+  
+  console.log("Updated",updatedMovie)
+    // 1. Method must be PUT and pass id
+    // 2. BODY - JSON data
+    // 3. headers - JSON data
+    // 4 .After PUT is completed -> move to movies
 fetch(`${API}/movies/${movie.id}`,{
   method : "PUT",
   body : JSON.stringify(updatedMovie),
@@ -75,13 +69,7 @@ fetch(`${API}/movies/${movie.id}`,{
     "Content-type" : "application/json"
   }
 }).then(()=>history.push(`/movies`))
-          // const copyMovieList = [...movieList];
-          // copyMovieList[id] = updatedMovie;
-          // setMovieList(copyMovieList)
-          // history.push(`/movies`)
-
-          // setMovieList([...movieList, newMovie]);
-          // history.push(`/movies`)
+       
 }
 
   return(

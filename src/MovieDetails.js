@@ -12,6 +12,7 @@ useEffect(()=>{
 fetch(`${API}/movies/${id}`,{
   method : "GET"
 })
+
 .then((data)=> data.json())
 .then((mvss) => setMovie(mvss))
 .catch((err) => console.log(err))

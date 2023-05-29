@@ -70,7 +70,8 @@ const deleteMovie= (id) => {
 }
 
 
-
+//export function MovieList({movieList,setMovieList}) {
+// const history = useHistory() 
 // return (
 //   <div className="movie-list">
 //     {movieList.map(({ name, poster, rating, summary,trailer ,id}, index) => (

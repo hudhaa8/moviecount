@@ -26,6 +26,7 @@ export function BasicForm() {
       type="email" 
       placeholder="email" /> <br /><br />
 
+{/* {formik.errors.email } */}
       {formik.touched.email && formik.errors.email ? formik.errors.email : " "}
 
       <input
@@ -37,8 +38,9 @@ export function BasicForm() {
         type="password"
         placeholder="password"
       /> <br /><br />
+{/* {formik.errors.password } */}
 
-{formik.touched.password && formik.errors.password ? formik.errors.password : ""}
+     {formik.touched.password && formik.errors.password ? formik.errors.password : ""}
 
       <button type="submit"> Submit</button>
     </form>
