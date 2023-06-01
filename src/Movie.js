@@ -10,7 +10,7 @@ import { Counter } from "./Counter";
 import InfoIcon from '@mui/icons-material/Info';
 import { useHistory} from "react-router-dom/cjs/react-router-dom.min";
 
-export function Movie({ poster, name, rating, summary, deleteButton,editButton, id }) {
+export function Movie({ poster, name, rating, summary, deleteButton,editButton, id,_id  }) {
   // const  poster= "https://wallpaperaccess.com/full/13453.jpg"
   // const name= "AVENGERS"
   // const summary= "When Thor's evil brother, Loki Tom Hiddleston, gains access to the unlimited power of the energy cube called the Tesseract, Nick Fury Samuel L. Jackson, director of S.H.I.E.L.D., initiates a superhero recruitment effort to defeat the unprecedented threat to Earth. Joining Fury's dream team are Iron Man Robert Downey Jr.Captain America Chris Evans, the Hulk Mark Ruffalo, Thor Chris Hemsworth, the Black Widow Scarlett Johansson and Hawkeye Jeremy Renner.";

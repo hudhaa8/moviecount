@@ -7,13 +7,13 @@ import { API } from "./global";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
-// here we did not use useState, formik do this 
+// here we did not use useState, formik do this job
 // export movieValidationSchema to editMovie , because of same validation
 export const movieValidationSchema = yup.object({
   name: yup
     .string()
     .required("why not fill this name")
-    .min(5, "Need longer email"),
+    .min(5, "Need longer "),
   poster: yup
     .string()
     .required("why not fill this poster")

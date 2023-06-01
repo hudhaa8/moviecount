@@ -33,10 +33,11 @@ const deleteMovie= (id) => {
 
   return (
     <div className="movie-list">
-      {movieList.map(({ name, poster, rating, summary,trailer ,id}, index) => (
+      {movieList.map(({ name, poster, rating, summary,trailer ,id, _id}, index) => (
         <Movie
-          key={index}
-          id ={id}
+        // key={index}
+          key={_id}
+          // id ={id}
           name={name}
           poster={poster}
           rating={rating}
@@ -46,7 +47,7 @@ const deleteMovie= (id) => {
           deleteButton= {
             <IconButton
             style={{marginLeft : "auto"}} 
-            onClick={()=>deleteMovie(id)} 
+            onClick={()=>deleteMovie(_id)} 
              aria-label="delete" color="error" >
   <DeleteIcon />
 </IconButton>
@@ -55,14 +56,14 @@ const deleteMovie= (id) => {
 
         editButton= {
           <IconButton onClick={()=>{
-            history.push(`/editmovies/edit/${id}`)
+            history.push(`/editmovies/edit/${_id}`)
            }} aria-label="delete" color="secondary" >
 <EditIcon />
 </IconButton>
         
       }
         //passing index as id prop
-        id = {id}
+        id = {_id}
           />
       ))}
     </div>
