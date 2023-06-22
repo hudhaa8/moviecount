@@ -28,7 +28,7 @@ useEffect(()=>getMovies(),[])
 const deleteMovie= (id) => {
   fetch(`${API}/movies/${id}`,{
     method : "DELETE"
-  }) .then(()=>getMovies())
+  }).then(()=>getMovies())
 }
 
   return (

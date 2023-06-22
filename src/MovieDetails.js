@@ -30,7 +30,9 @@ fetch(`${API}/movies/${id}`,{
 
         <div className="movie-specs">
           <h2 className="movie-name">{movie.name}</h2>
-          <p className="movie-rating">  ⭐ {movie.rating} </p>
+          {/* <p className="movie-rating">  <span>⭐</span>  {movie.rating} </p> */}
+          <span role="img" className="movie-name" aria-label="Smiling Face">⭐ {movie.rating} </span>
+
         </div>
 
         <p className="movie-summary">  {movie.summary} </p>

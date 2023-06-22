@@ -51,9 +51,9 @@ export function Movie({ poster, name, rating, summary, deleteButton,editButton, 
             </IconButton>
             
           </h2>
-          <p style={styles} className="movie-rating">
+          <span style={styles} className="movie-rating" role="img"aria-label="Smiling Face">
             ⭐ {rating}{" "}
-          </p>
+          </span>
         </div>
 
         {/* conditional rendering */}

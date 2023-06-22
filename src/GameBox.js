@@ -5,7 +5,7 @@ export function GameBox({ val, onPlayerClick }) {
   // const [isXturn , setIsXturn] = useState(val)
   // const val = "X"
   const styles = {
-    color: val == "X" ? "green" : "red",
+    color: val === "X" ? "green" : "red",
   };
 
   return (

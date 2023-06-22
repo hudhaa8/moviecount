@@ -11,12 +11,14 @@ export function Counter() {
 
       <IconButton className="like-dislike" onClick={() => setLike(like + 1)} color="primary" aria-label="delete">
         <Badge badgeContent={like} color="primary">
-          👍
+         
+          <span role="img"aria-label="Smiling Face"> 👍 </span>
         </Badge>
       </IconButton>
       <IconButton className="like-dislike" onClick={() => setDislike(dislike + 1)} color="error" aria-label="delete">
         <Badge badgeContent={dislike} color="error">
-          👎
+          
+          <span role="img"aria-label="Smiling Face"> 👎 </span>
         </Badge>
       </IconButton>
 
